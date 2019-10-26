@@ -1,7 +1,15 @@
 from PyQt5 import QtWidgets, uic
 import sys
+import os
 import subprocess
 import re
+
+def getmac(iface):
+    try:
+        mac = open('/sys/class/net/'+iface+'/address').readline()
+    except:
+        mac = "00:00:00:00:00:00"
+    return mac[0:17]
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -15,9 +23,16 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
 
     def changeButtonPressed(self):
-        print(self.new_mac.text())
-        print(self.interface.text())
-
+        # print(self.new_mac.text())
+        # print(self.interface.text())
+        myMac = getmac(self.interface.text())
+        interface = self.interface.text()
+        new_mac = self.new_mac.text()
+        os.system('ifconfig ' + interface + ' down')
+        # subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
+        os.system('ifconfig ' + interface + ' hw ether ' + new_mac)
+        os.system('ifconfig ' + interface + ' up')
+        print(myMac)
     
 
 app = QtWidgets.QApplication(sys.argv)
