@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MacChanger</class>
+ <widget class="QMainWindow" name="MacChanger">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>278</width>
+    <height>244</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mac Changer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="changeButton">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>170</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="interfaceComboBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="macAddressInput">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>201</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="inputMask">
+     <string>xx:xx:xx:xx:xx:xx</string>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::LogicalMoveStyle</enum>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="resultLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>90</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>I'm waiting for you</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>278</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAbout_Me">
+    <property name="title">
+     <string>About Me</string>
+    </property>
+    <addaction name="actionAbout_me"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <addaction name="menuAbout_Me"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout_me">
+   <property name="text">
+    <string>About me</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
